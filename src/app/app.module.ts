@@ -1,18 +1,17 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
+import { CommonModule } from '@angular/common';
+import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { BookReducer } from './books/book.reducer';
+
+
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [],
   imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    CommonModule,
+    AppRoutingModule,
+    StoreModule.forRoot({book: BookReducer})
+  ]
 })
 export class AppModule { }
